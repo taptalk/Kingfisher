@@ -639,10 +639,11 @@ extension ImageCache {
     }
     
     func cacheFileName(forComputedKey key: String) -> String {
-        if let ext = self.pathExtension {
-          return (key.kf.md5 as NSString).appendingPathExtension(ext)!
-        }
-        return key.kf.md5
+        return key
+//        if let ext = self.pathExtension {
+//          return (key.kf.md5 as NSString).appendingPathExtension(ext)!
+//        }
+//        return key.kf.md5
     }
 }
 
