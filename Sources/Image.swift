@@ -618,7 +618,7 @@ extension Kingfisher where Base: Image {
         let bitmapInfo = imageRef.bitmapInfo.fixed
         
         guard let context = CGContext(data: nil, width: imageRef.width, height: imageRef.height, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue) else {
-            assertionFailure("[Kingfisher] Decoding fails to create a valid context.")
+            //assertionFailure("[Kingfisher] Decoding fails to create a valid context.")
             return base
         }
         
