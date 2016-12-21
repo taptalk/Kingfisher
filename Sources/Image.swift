@@ -615,10 +615,10 @@ extension Kingfisher where Base: Image {
             return base
         }
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = imageRef.bitmapInfo.fixed
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
         
         guard let context = CGContext(data: nil, width: imageRef.width, height: imageRef.height, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue) else {
-            //assertionFailure("[Kingfisher] Decoding fails to create a valid context.")
+            assertionFailure("[Kingfisher] Decoding fails to create a valid context.")
             return base
         }
         
